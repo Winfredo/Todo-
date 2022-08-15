@@ -1,8 +1,14 @@
+ import React from 'react'
+import BackgroundPage from "./Components/Background";
 
 
 function App() {
   return (
-   <div>winfred</div>
+   <div>
+    < BackgroundPage />
+   </div>
+    
+  
   );
 }
 
