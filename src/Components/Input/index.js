@@ -1,9 +1,18 @@
 import React from 'react'
 
-function Input() {
+function InputPage() {
   return (
-    <div>Input</div>
+    <div className='flex items-stretch justify-items-stretch  '>
+      <button className='bg-blue-400 hover:bg-blue-500 ' >
+        All
+        </button> 
+      <button className='bg-green-500'> 
+      
+        Completed</button>
+      <button className='bg-yellow-400'>
+        Pending</button>
+    </div>
   )
 }
 
-export default Input
+export default InputPage;
