@@ -8,7 +8,7 @@ function InputPage() {
         ALL: 0
         </button> 
         
-      <button className='bg-green-400 hover:bg-green-500 mr-8 px-8 py-1'> 
+      <button className='bg-green-400 hover:bg-green-500 mr-8 px-8 py-2'> 
         COMPLETED : 0
         </button>
 
