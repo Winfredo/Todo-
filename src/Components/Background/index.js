@@ -4,7 +4,7 @@ import InputPage from '../Input';
 
 function BackgroundPage() {
   return (
-    <div className='w-screen h-screen overflow-hidden md: bg-red-400 flex flex-col items-center'>
+    <div className='w-screen h-screen overflow-hidden bg-red-400 flex flex-col items-center'>
       <div className='font-semibold text-[3rem] m-14'>
         <h1>Winfred's Todo List</h1>
       </div>
