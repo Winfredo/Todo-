@@ -2,10 +2,12 @@
 import BackgroundPage from "./Components/Background";
 
 
+
 function App() {
   return (
    <div>
     < BackgroundPage />
+   
    </div>
     
   
