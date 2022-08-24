@@ -1,6 +1,7 @@
 import React from 'react'
 import { GrAddCircle } from "react-icons/gr"; 
 import InputPage from '../Input';
+import TodoPage from '../todo';
 
 function BackgroundPage() {
   return (
@@ -20,6 +21,16 @@ function BackgroundPage() {
       </div>
 
       < InputPage />
+      
+
+      <div  className='w-screen h-full flex items-center justify-center'>
+        <div className='w-[60%] h-full flex justify-center items-start mt-10'>
+          <div className='w-full flex flex-col '>
+            <TodoPage />
+          </div>
+        </div>
+      </div>
+      
 
     </div>
     
