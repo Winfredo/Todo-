@@ -9,10 +9,10 @@ const TodoPage =() => {
           <p>Todo Text</p>
         </div>
         <div className="w-[10%] flex items-center justify-center gap-2">
-          <button className="bg-green-400 py-2 px-3 text-white text-base font-sans ">
+          <button className="bg-green-400 hover:bg-green-500 py-2 px-3 text-white text-base font-sans ">
             check
           </button>
-          <button className="bg-red-500 py-2 px-3 text-white text-base font-sans ">
+          <button className="bg-red-500 hover:bg-red-600 py-2 px-3 text-white text-base font-sans ">
             delete
           </button>
         </div>
