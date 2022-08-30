@@ -1,9 +1,10 @@
- import React from 'react'
+ import React, { useState } from 'react'
 import BackgroundPage from "./Components/Background";
 
 
 
 function App() {
+ 
   return (
    <div>
     < BackgroundPage />
@@ -15,3 +16,4 @@ function App() {
 }
 
 export default App;
+
