@@ -23,9 +23,20 @@ function BackgroundPage() {
       }
 
       console.log(allTodo)
+      let stored = JSON.parse(localStorage.getItem("todo"))
 
+      if(stored) {
+        setAllTodo(stored)
+      }
   }
 
+    const getAllTodo = () => {
+
+    }
+
+  useEffect(() => {
+      localStorage.setItem("todo", JSON.stringify(allTodo))
+    }, [allTodo])
   
   
 
