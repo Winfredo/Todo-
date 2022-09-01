@@ -1,10 +1,10 @@
 //import React from 'react'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { GrAddCircle } from "react-icons/gr"; 
 import InputPage from '../Input';
 import TodoPage from '../todo';
 
-function BackgroundPage() {
+const BackgroundPage = () => {
 
   const [todo, setTodo] = useState("")
   const [allTodo, setAllTodo] = useState([])
@@ -26,9 +26,9 @@ function BackgroundPage() {
       
   }
 
-    // UseEffect(() => {
-    //     localStorage.setItem("todo", JSON.stringify(allTodo))
-    // }, [allTodo])
+    useEffect(() => {
+        localStorage.setItem("todo", JSON.stringify(allTodo))
+    }, [allTodo])
     
     
 
@@ -69,3 +69,4 @@ function BackgroundPage() {
 }
 
 export default BackgroundPage;
+
