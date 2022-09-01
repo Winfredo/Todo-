@@ -1,5 +1,5 @@
 //import React from 'react'
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { GrAddCircle } from "react-icons/gr"; 
 import InputPage from '../Input';
 import TodoPage from '../todo';
@@ -23,22 +23,14 @@ function BackgroundPage() {
       }
 
       console.log(allTodo)
-      let stored = JSON.parse(localStorage.getItem("todo"))
-
-      if(stored) {
-        setAllTodo(stored)
-      }
+      
   }
 
-    const getAllTodo = () => {
-
-    }
-
-  useEffect(() => {
-      localStorage.setItem("todo", JSON.stringify(allTodo))
-    }, [allTodo])
-  
-  
+    // UseEffect(() => {
+    //     localStorage.setItem("todo", JSON.stringify(allTodo))
+    // }, [allTodo])
+    
+    
 
 
   return (
@@ -48,7 +40,7 @@ function BackgroundPage() {
         
       </div>
       <div className='w-screen flex items-center justify-center  '>
-        <form className=' w-96 ' onClick={addTodo}>
+        <form className=' w-96 ' onSubmit={addTodo}>
           <div className='flex justify-between items-center gap-x-1 bg-white border border-red-500 w-full h-10 p-0'>
           <input className=' font-semibold w-60 pl-2 h-8 outline-none ' type={"text"} value={todo} onChange={(e) => setTodo(e.target.value)} placeholder="Create a new todo" />
             <button className=' h-10  p w-[15%] shadow-xl hover:bg-red-500 bg-red-400 flex items-center justify-center  cursor-pointer"' onClick={addTodo}>
