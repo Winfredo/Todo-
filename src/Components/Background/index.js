@@ -1,10 +1,10 @@
 //import React from 'react'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { GrAddCircle } from "react-icons/gr"; 
 import InputPage from '../Input';
 import TodoPage from '../todo';
 
-function BackgroundPage() {
+const BackgroundPage = () => {
 
   const [todo, setTodo] = useState("")
   const [allTodo, setAllTodo] = useState([])
@@ -26,9 +26,24 @@ function BackgroundPage() {
       
   }
 
-    // UseEffect(() => {
-    //     localStorage.setItem("todo", JSON.stringify(allTodo))
-    // }, [allTodo])
+
+    const getAlltodo= () => {
+      let stored = JSON.parse(localStorage.getItem("todo"))
+
+      if(stored) {
+        setAllTodo(stored)
+      }
+ 
+    }
+
+    useEffect(() => {
+      getAlltodo()
+    }, [])
+    
+
+    useEffect(() => {
+        localStorage.setItem("todo", JSON.stringify(allTodo))
+    }, [allTodo])
     
     
 
@@ -56,7 +71,15 @@ function BackgroundPage() {
       <div  className='w-screen h-full flex items-center justify-center'>
         <div className='w-[60%] h-full flex justify-center items-start mt-10'>
           <div className='w-full flex flex-col '>
-            <TodoPage />
+            {
+              allTodo.map(todo =>(
+                <TodoPage text={todo.text} isChecked={todo.isChecked} />
+               
+                ))
+            
+         
+          }
+
           </div>
         </div>
       </div>
@@ -69,3 +92,4 @@ function BackgroundPage() {
 }
 
 export default BackgroundPage;
+
