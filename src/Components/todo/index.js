@@ -12,9 +12,9 @@ const TodoPage =({text, deleteTodo, isChecked, toggleChecked }) => {
           <p className="h-6"> {text}</p>
         </div>
         <div className="w-[10%] flex items-center justify-center gap-1">
-          <button className="bg-green-400 hover:bg-green-500 py-2 px-2 text-white text-base font-sans " onClick={toggleChecked}>
+          <button className=" bg-green-400 hover:bg-green-500 py-2 px-2 text-white text-base font-sans " onClick={toggleChecked}>
             {isChecked && < BsCheckLg size={26}/>}
-          </button>
+          </button> 
           <button className="bg-red-500 hover:bg-red-600 py-2 px-2 text-white text-base font-sans " onClick={deleteTodo}>
           <MdOutlineDeleteOutline size={26}/>
           </button>
