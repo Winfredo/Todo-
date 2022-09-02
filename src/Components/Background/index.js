@@ -26,6 +26,21 @@ const BackgroundPage = () => {
       
   }
 
+
+    const getAlltodo= () => {
+      let stored = JSON.parse(localStorage.getItem("todo"))
+
+      if(stored) {
+        setAllTodo(stored)
+      }
+ 
+    }
+
+    useEffect(() => {
+      getAlltodo()
+    }, [])
+    
+
     useEffect(() => {
         localStorage.setItem("todo", JSON.stringify(allTodo))
     }, [allTodo])
@@ -56,7 +71,15 @@ const BackgroundPage = () => {
       <div  className='w-screen h-full flex items-center justify-center'>
         <div className='w-[60%] h-full flex justify-center items-start mt-10'>
           <div className='w-full flex flex-col '>
-            <TodoPage />
+            {
+              allTodo.map(todo =>(
+                <TodoPage text={todo.text} isChecked={todo.isChecked} />
+               
+                ))
+            
+         
+          }
+
           </div>
         </div>
       </div>
