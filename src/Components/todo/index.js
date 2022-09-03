@@ -9,10 +9,10 @@ const TodoPage =({text, deleteTodo, isChecked, toggleChecked }) => {
       {/* unit todo */}
       <div className="w-[80%]  flex items-center justify-center gap-2">
         <div className="w-[60%] bg-white py-2 px-3">
-          <p className="h-6"> {text}</p>
+          <p className={ `${isChecked ? "h-6 bg-transparent text-decoration-line: line-through text-[#0f90a1] " : " h-6 " } `} > {text}</p>
         </div>
         <div className="w-[10%] flex items-center justify-center gap-1">
-          <button className=" bg-green-400 hover:bg-green-500 py-2 px-2 text-white text-base font-sans " onClick={toggleChecked}>
+          <button className= {`${isChecked ? " bg-green-400 hover:bg-green-500 py-2 px-2 text-white text-base font-sans" : "bg-transparent bg-green-400 hover:bg-green-500 py-2 px-2 text-white text-base font-sans "}` } onClick={toggleChecked}>
             {isChecked && < BsCheckLg size={26}/>}
           </button> 
           <button className="bg-red-500 hover:bg-red-600 py-2 px-2 text-white text-base font-sans " onClick={deleteTodo}>
@@ -22,6 +22,6 @@ const TodoPage =({text, deleteTodo, isChecked, toggleChecked }) => {
       </div>
     </div>
   );
-}
+} 
 
-export default TodoPage;
+export default TodoPage; 
