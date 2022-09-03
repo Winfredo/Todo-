@@ -36,6 +36,24 @@ const BackgroundPage = () => {
  
     }
 
+      const toggleChecked = (id) => {
+        let updatedTodo = [...allTodo].map(todo =>{
+          if (todo.id === id){
+              todo.isChecked = !todo.isChecked
+          }
+            return todo
+
+        } )
+        setAllTodo(updatedTodo)
+      }
+
+      const deleteTodo = (id) => {
+        const filteredTodo = allTodo.filter(todo => todo.id !== id)
+        setAllTodo(filteredTodo)
+
+      }
+
+
     useEffect(() => {
       getAlltodo()
     }, [])
@@ -64,7 +82,7 @@ const BackgroundPage = () => {
           </div>
         </form>
       </div>
-
+  
       < InputPage />
       
 
@@ -73,7 +91,7 @@ const BackgroundPage = () => {
           <div className='w-full flex flex-col '>
             {
               allTodo.map(todo =>(
-                <TodoPage text={todo.text} isChecked={todo.isChecked} />
+                <TodoPage key={todo.id} deleteTodo={ () => deleteTodo(todo.id) } text={todo.text} isChecked={todo.isChecked} toggleChecked= {() => toggleChecked(todo.id)} />
                
                 ))
             
