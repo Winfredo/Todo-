@@ -13,7 +13,7 @@ const TodoPage =({text, deleteTodo, isChecked, toggleChecked }) => {
         </div>
         <div className="w-[10%] flex items-center justify-center gap-1">
           <button className= {`${isChecked ? " bg-green-400 hover:bg-green-500 py-2 px-2 text-white text-base font-sans" : "bg-transparent bg-green-400 hover:bg-green-500 py-2 px-2 text-white text-base font-sans "}` } onClick={toggleChecked}>
-            {isChecked && < BsCheckLg size={25}/>}
+            {isChecked && < BsCheckLg size={24}/>}
           </button> 
           <button className="bg-red-500 hover:bg-red-600 py-2 px-2 text-white text-base font-sans " onClick={deleteTodo}>
           <MdOutlineDeleteOutline size={26}/>
